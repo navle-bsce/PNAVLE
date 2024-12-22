@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bovine (Study)</title>
+    <link rel="icon" href="Animal.png" type="image/x-icon">
+    <link rel="shortcut icon" href="Animal.png" type="image/x-icon">
+    
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-image: url('a.jpg'); /* Replace with your image path */
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .container {
+            background: rgba(255, 255, 255, 0.7);
+            border: 2px solid #5928df;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Exciting title styles */
+        .title {
+            font-size: 60px;
+            font-weight: bold;
+            font-family: 'Georgia', serif;
+            color: #e74c3c;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            animation: bounce 2s infinite;
+            margin-bottom: 10px;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-30px);
+            }
+            60% {
+                transform: translateY(-15px);
+            }
+        }
+
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        /* Add hover effect for the last row buttons */
+        .last-row .button:hover {
+            background-color: #c0392b;
+            transform: scale(1.05);
+            color: #fff;
+        }
+
+        .button-row {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .button {
+            width: 200px;
+            height: 100px;
+            background-color: #2de746;
+            color: #f8f8f8;
+            font-size: 22px;
+            font-weight: bold;
+            border: solid;
+            border-color: rgb(36, 71, 36);
+            border-radius: 20px;
+            text-align: center;
+            line-height: 100px;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #2980b9;
+            transform: scale(1.05);
+            color: #fff;
+        }
+
+        /* Background color for the last row buttons */
+        .last-row .button {
+            background-color: #e74c3c;
+        }
+        /* Unique styles for the 4th row buttons */
+        .button-row.special-row .button {
+            background-color: rgb(8, 7, 10); /* Change the background color to a unique color */
+            color: #fdfdfd; /* Change the text color */
+            font-size: 24px; 
+            font-size: 22px;
+            font-weight: bold;
+            border: solid;
+            border-color: rgb(219, 34, 9);
+            border-radius: 20px;
+            text-align: center;
+            line-height: 100px;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+        }
+
+        
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        /* Add margin to the "About" button container to move it down */
+        .about-button-container {
+            margin-top: 20px; /* Adjust the margin as needed */
+        }
+        
+        /* Add the Palestinian flag with text and motion effect */
+        .palestine-container {
+            position: relative;
+            animation: moveFlag 2s infinite;
+        }
+
+        .palestine-flag {
+            background-image: url('P-F.png'); /* Replace with your flag image path */
+            background-size: 100% 100%;
+            width: 100px;
+            height: 60px;
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .palestine-text {
+            font-size: 60px;
+            font-weight: bold;
+         font-family: 'Amiri', serif;
+         color: rgb(14, 28, 160);
+         display: inline-block;
+        }
+
+
+        @keyframes moveFlag {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="palestine-container">
+            <div class="palestine-flag"></div>
+            <div class="palestine-text">لا تنسو الدعاء لأهلنا في فلسطين</div>
+            <div class="palestine-flag"></div>
+        </div>
+        <div class="title">
+            <p>Choose A System To Study</p>
+        </div>
+        <div class="button-container">
+            <div class="button-row">
+                <a class="button" href="GIT">GIT</a>
+                <a class="button" href="Respiratory">Respiratory</a>
+                <a class="button" href="Cardiology">Cardiology</a>
+                <a class="button" href="Neurology">Neurology</a>
+                
+            </div>
+            
+            <div class="button-row">
+                <a class="button" href="Musculoskeletal">Musculoskeletal</a>
+                <a class="button" href="Tumors">Tumors</a>
+                <a class="button" href="Infectious ">Infectious</a>
+                <a class="button" href="Gynaecology">Gynaecology</a>
+                
+            </div>
+            
+            <div class="button-row">
+                <a class="button" href="Urinary">Urinary</a>
+                <a class="button" href="Toxicology">Toxicology</a>
+                <a class="button" href="Metabolic">Metabolic</a>
+                
+            </div>
+         
+            <div class="button-row special-row">
+                <a class="button" href="All-Systems">All Systems</a>
+                
+            </div>
+        </div>
+
+        <!-- Add a container for the "About" button with a margin -->
+        <div class="about-button-container">
+            <div class="button-row last-row">
+                <a class="button" href=" https://drive.google.com/file/d/1E3PTMl42pHJKH3evXSGD4onU7zmiOjyX/view?usp=sharing">Vital Signs</a>
+                <a class="button" href="https://drive.google.com/file/d/1BWtvEOj3Lu7KMI9srstwWILGySGJzJOX/view?usp=sharing">ICVA List</a>
+                <a class="button" href="https://vetmed.illinois.edu/imaging_anatomy/index.html">X-rays</a>
+                <a class="button" href="../index.html">Species Page</a>
+               
+                
+            </div>
+        </div>
+    </div>
+    
+    
+
+</body>
+</html>
